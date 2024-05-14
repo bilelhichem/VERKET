@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="verket">#9DD421</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gris">#81858B</color>
+    <color name="rose">#FFD3DD</color>
+    <color name="move">#7096D1</color>
+    <color name="brune">#D2AB80</color>
+
+
+
+</resources>
