@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "127810879196",
+    "firebase_url": "https://verket-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "verket",
+    "storage_bucket": "verket.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:127810879196:android:724a035c4807c06c007e19",
+        "android_client_info": {
+          "package_name": "com.example.verket"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHFttHf7IG61ob68ry3cvqt0YHfhP94Tk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

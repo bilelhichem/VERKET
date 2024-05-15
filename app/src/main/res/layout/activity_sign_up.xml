@@ -67,6 +67,7 @@
             android:drawableStart="@drawable/baseline_people_24"
             android:drawablePadding="8dp"
             android:hint="Nom"
+            android:id="@+id/nameuser"
             android:inputType="textPersonName"
             android:padding="8dp"
             android:textColor="@color/black"
@@ -80,6 +81,7 @@
             android:drawableStart="@drawable/baseline_people_24"
             android:drawablePadding="8dp"
             android:hint="Prénom"
+            android:id="@+id/prenomuser"
             android:inputType="textPersonName"
             android:padding="8dp"
             android:textColor="@color/black"
@@ -93,6 +95,7 @@
             android:drawableStart="@drawable/baseline_email_24"
             android:drawablePadding="8dp"
             android:hint="Email"
+            android:id="@+id/emailuser"
             android:inputType="textEmailAddress"
             android:padding="8dp"
             android:textColor="@color/black"
@@ -106,12 +109,14 @@
             android:drawableStart="@drawable/baseline_password_24"
             android:drawablePadding="8dp"
             android:hint="Password"
+            android:id="@+id/passuser"
             android:inputType="textPassword"
             android:padding="8dp"
             android:textColor="@color/black"
             android:textColorHint="@color/gris" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/Register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"

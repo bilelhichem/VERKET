@@ -358,6 +358,7 @@ android:backgroundTint="@color/white"
                 </ImageView>
 
                 <TextView
+                    android:id="@+id/devenirpart"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Devenir Partenaire"
