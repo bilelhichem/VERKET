@@ -15,6 +15,15 @@
         android:theme="@style/Theme.VERKET"
         tools:targetApi="31">
         <activity
+            android:name=".Paretenaire.attente"
+            android:exported="false" />
+        <activity
+            android:name=".Paretenaire.Homepartenaire"
+            android:exported="false" />
+        <activity
+            android:name=".Paretenaire.emailverifparten"
+            android:exported="false" />
+        <activity
             android:name=".Paretenaire.addProduct"
             android:exported="false" />
         <activity

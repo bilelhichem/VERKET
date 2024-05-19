@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Paretenaire.addProduct"
+    tools:context=".Paretenaire.addfrag"
     android:background="@color/white"
-    android:padding="10dp"
-
-    >
-
+    android:padding="10dp">
 
     <LinearLayout
         android:id="@+id/liprod"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:gravity="center"
         android:orientation="vertical"
         android:visibility="visible"
@@ -41,7 +39,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_background"
             android:drawablePadding="8dp"
-            android:hint="Name de Produit"
+            android:hint="Nom de produit"
             android:inputType="text"
             android:padding="8dp"
             android:textColor="@color/black"
@@ -49,36 +47,36 @@
 
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:background="@drawable/edit_text_background"
             android:drawablePadding="8dp"
-            android:hint="Description de Produit"
+            android:hint="Description"
             android:inputType="text"
             android:padding="8dp"
             android:textColor="@color/black"
             android:textColorHint="@color/gris" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:background="@drawable/edit_text_background"
             android:drawablePadding="8dp"
-            android:hint="Prix de Produit"
+            android:hint="Prix"
             android:inputType="text"
             android:padding="8dp"
             android:textColor="@color/black"
             android:textColorHint="@color/gris" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:background="@drawable/edit_text_background"
             android:drawablePadding="8dp"
-            android:hint="Quantite de Produit"
+            android:hint="Quantité de stock disponible"
             android:inputType="text"
             android:padding="8dp"
             android:textColor="@color/black"
@@ -93,38 +91,38 @@
             android:hint="Categorie">
 
             <AutoCompleteTextView
-                android:padding="20dp"
-
                 android:id="@+id/editTextCategory"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="none"
                 android:drawableEnd="@drawable/baseline_arrow_drop_down_24"
                 android:drawableRight="@drawable/baseline_arrow_drop_down_24"
                 android:drawablePadding="8dp"
-                android:focusable="false" />
+                android:focusable="false"
+                android:inputType="none"
+                android:padding="20dp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:background="@drawable/edit_text_background"
             android:drawablePadding="8dp"
-            android:hint="Code  de Promo"
+            android:hint="Code promo"
             android:inputType="text"
             android:padding="8dp"
             android:textColor="@color/black"
             android:textColorHint="@color/gris" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:background="@drawable/edit_text_background"
             android:drawablePadding="8dp"
-            android:hint="Pourcentage de promo"
+            android:hint="Pourcentage"
             android:inputType="text"
             android:padding="8dp"
             android:textColor="@color/black"
@@ -138,10 +136,11 @@
             android:layout_marginTop="10dp"
 
             android:backgroundTint="@color/verket"
-            android:text="Confirme"
+            android:text="Confirmer"
             android:textColor="@color/white"
 
 
             ></androidx.appcompat.widget.AppCompatButton>
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout >
