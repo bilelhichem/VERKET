@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Paretenaire.addfrag"
     android:background="@color/white"
-    android:padding="10dp">
-
+    android:padding="10dp"
+    android:layout_height="match_parent"
+    tools:context=".Paretenaire.UpdateProduct">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -25,11 +23,11 @@
             android:gravity="center"
             android:orientation="vertical"
             android:visibility="visible"
-           >
+            >
 
 
             <ImageView
-                android:id="@+id/uplimage"
+                android:id="@+id/updateimage"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_below="@+id/tex"
@@ -41,7 +39,7 @@
             </ImageView>
 
             <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/nmpr"
+                android:id="@+id/upnmpr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edit_text_background"
@@ -54,7 +52,7 @@
 
 
             <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/dcpr"
+                android:id="@+id/updcpr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -67,7 +65,7 @@
                 android:textColorHint="@color/gris" />
 
             <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/prpr"
+                android:id="@+id/upprpr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -80,7 +78,7 @@
                 android:textColorHint="@color/gris" />
 
             <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/qntpr"
+                android:id="@+id/upqntpr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -114,16 +112,9 @@
                     android:padding="20dp" />
 
             </com.google.android.material.textfield.TextInputLayout>
-            <Switch
-                android:id="@+id/switch1"
-                android:layout_marginTop="5dp"
-                android:layout_width="wrap_content"
-                android:layout_gravity="start"
-                android:layout_height="30dp"
-                >
-            </Switch>
+
             <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/codepr"
+                android:id="@+id/upcodepr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -131,29 +122,22 @@
                 android:drawablePadding="8dp"
                 android:hint="Code promo"
                 android:inputType="text"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:padding="8dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/gris" />
 
-            <Switch
-                android:id="@+id/switch2"
-                android:layout_marginTop="5dp"
-                android:layout_width="wrap_content"
-                android:layout_gravity="start"
-                android:layout_height="30dp"
-                >
-            </Switch>
+
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:layout_width="match_parent"
-                android:id="@+id/pourcentagepr"
+                android:id="@+id/uppourcentagepr"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/edit_text_background"
                 android:drawablePadding="8dp"
                 android:hint="Pourcentage"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:inputType="text"
                 android:padding="8dp"
                 android:textColor="@color/black"
@@ -162,7 +146,7 @@
             <androidx.appcompat.widget.AppCompatEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/datepr"
+                android:id="@+id/updatepr"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/edit_text_background"
                 android:drawablePadding="8dp"
@@ -173,7 +157,7 @@
                 android:textColorHint="@color/gris" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/registervend"
+                android:id="@+id/confirmeupdate"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_below="@id/up2"
@@ -193,5 +177,4 @@
         </LinearLayout>
 
     </ScrollView>
-
-</androidx.constraintlayout.widget.ConstraintLayout >
+</androidx.constraintlayout.widget.ConstraintLayout>

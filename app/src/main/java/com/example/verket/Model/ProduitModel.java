@@ -1,16 +1,21 @@
 package com.example.verket.Model;
 
 public class ProduitModel {
-    public String  imageproduit ;
-    public  String nameproduit ;
-    public  String descriptionproduit  ;
-    public  String prixproduit ;
-    public  String quantiteproduit ;
-    public  String categorieproduit ;
-    public String codepromo ;
-    public String pourcentage ;
+    public String id;
+    public String imageproduit;
+    public String nameproduit;
+    public String descriptionproduit;
+    public String prixproduit;
+    public String quantiteproduit;
+    public String categorieproduit;
+    public String codepromo;
+    public String pourcentage;
 
-    public ProduitModel(String imageproduit, String nameproduit, String descriptionproduit, String prixproduit, String quantiteproduit, String categorieproduit, String codepromo, String pourcentage) {
+    public String date_pirime;
+
+
+    public ProduitModel(String id, String imageproduit, String nameproduit, String descriptionproduit, String prixproduit, String quantiteproduit, String categorieproduit, String codepromo, String pourcentage, String date_pirime) {
+        this.id = id;
         this.imageproduit = imageproduit;
         this.nameproduit = nameproduit;
         this.descriptionproduit = descriptionproduit;
@@ -19,6 +24,18 @@ public class ProduitModel {
         this.categorieproduit = categorieproduit;
         this.codepromo = codepromo;
         this.pourcentage = pourcentage;
+        this.date_pirime = date_pirime;
+    }
+
+    public ProduitModel() {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getImageproduit() {
@@ -83,5 +100,13 @@ public class ProduitModel {
 
     public void setPourcentage(String pourcentage) {
         this.pourcentage = pourcentage;
+    }
+
+    public String getDate_pirime() {
+        return date_pirime;
+    }
+
+    public void setDate_pirime(String date_pirime) {
+        this.date_pirime = date_pirime;
     }
 }

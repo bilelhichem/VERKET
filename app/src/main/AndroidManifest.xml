@@ -15,6 +15,9 @@
         android:theme="@style/Theme.VERKET"
         tools:targetApi="31">
         <activity
+            android:name=".Paretenaire.UpdateProduct"
+            android:exported="false" />
+        <activity
             android:name=".Paretenaire.attente"
             android:exported="false" />
         <activity

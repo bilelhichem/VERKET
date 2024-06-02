@@ -7,7 +7,8 @@
     <color name="rose">#FFD3DD</color>
     <color name="move">#7096D1</color>
     <color name="brune">#D2AB80</color>
-
+    <color name="primaryColor">#6200EE</color>
+    <color name="errorColor">#B00020</color>
 
 
 </resources>

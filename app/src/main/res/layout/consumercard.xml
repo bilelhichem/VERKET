@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+       app:cardCornerRadius="20dp"
+        >
+
+        <ImageView
+            android:id="@+id/primage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/brandimage"
+            >
+
+        </ImageView>
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <TextView
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:textColor="#919398"
+        android:id="@+id/pr1"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="prix de produit 1 "
+
+        android:fontFamily="@font/inter"
+        >
+
+    </TextView>
+    <TextView
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:id="@+id/pr2"
+        android:textColor="#E91C1C"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="prix de produit 1 "
+
+        android:fontFamily="@font/inter"
+        >
+
+    </TextView>
+</LinearLayout>

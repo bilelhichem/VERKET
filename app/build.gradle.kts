@@ -33,6 +33,8 @@ android {
 }
 
 dependencies {
+
+    implementation ("com.squareup.picasso:picasso:2.71828")
     implementation("com.google.firebase:firebase-auth")
     implementation ("com.github.bumptech.glide:glide:4.16.0")
     implementation("com.google.firebase:firebase-database")
