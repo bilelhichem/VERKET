@@ -1,6 +1,7 @@
 package com.example.verket.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.verket.Model.ProduitModel;
 import com.example.verket.R;
+import com.example.verket.commandeclient;
 import com.example.verket.viewhorder.PoucentageViewHorder;
 import com.squareup.picasso.Picasso;
 
@@ -39,6 +41,15 @@ public class Pourcentageadapter extends RecyclerView.Adapter<PoucentageViewHorde
         String prixProduit = productList.get(position).getPrixproduit();
         holder.pr1.setText(productList.get(position).getPrixproduit());
         String pourcentage = productList.get(position).getPourcentage();
+
+        holder.primage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, commandeclient.class);
+                intent.putExtra("item",productList.get(position).getId());
+                context.startActivity(intent);
+            }
+        });
 
         // Check if the strings are empty or null
         if (!prixProduit.isEmpty() && !pourcentage.isEmpty()) {

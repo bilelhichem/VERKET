@@ -47,7 +47,7 @@ import java.util.UUID;
 
 public class addfrag extends Fragment {
     ImageView uplimage ;
-    EditText  name , description , prix , quantite  , codepromo , pourcentage , dateprimier ;
+    EditText  name , description , prix , quantite  , codepromo , pourcentage , dateprimier ,pourcentagedecodepromo;
     private TextInputLayout textInputLayout;
     private AutoCompleteTextView editTextCategory;
     Button registervend ;
@@ -70,8 +70,10 @@ public class addfrag extends Fragment {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                   codepromo.setVisibility(View.VISIBLE);
+                    pourcentagedecodepromo.setVisibility(View.VISIBLE);
                 }else if (!isChecked){
                     codepromo.setVisibility(View.GONE);
+                    pourcentagedecodepromo.setVisibility(View.GONE);
                 }
             }
         });
@@ -174,6 +176,7 @@ public class addfrag extends Fragment {
         codepromo = view.findViewById(R.id.codepr);
         pourcentage = view.findViewById(R.id.pourcentagepr);
         dateprimier = view.findViewById(R.id.datepr);
+        pourcentagedecodepromo = view.findViewById(R.id.pourcentagedecodepromo);
         registervend = view.findViewById(R.id.registervend);
         imgref = FirebaseStorage.getInstance().getReference().child("ProduitPartenaire");
         datadb = FirebaseDatabase.getInstance(getString(R.string.db_url)).getReference().child("ProduitPartenaire");
@@ -217,6 +220,7 @@ public class addfrag extends Fragment {
                                             quantite.getText().toString(),
                                             editTextCategory.getText().toString(),
                                             codepromo.getText().toString(),
+                                            pourcentagedecodepromo.getText().toString(),
                                             pourcentage.getText().toString(),
                                             dateprimier.getText().toString()
                                             ));

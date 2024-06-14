@@ -37,6 +37,9 @@ LinearLayout li1,li2,li3,li4,li5 ;
                 li3.setBackground(getResources().getDrawable(R.drawable.cardbackround2));
                 li4.setBackground(getResources().getDrawable(R.drawable.cardbackround2));
                 li5.setBackground(getResources().getDrawable(R.drawable.cardbackround2));
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.FrameFragment,new eventfrag())
+                        .commit();
 
             }
         });
@@ -81,6 +84,9 @@ LinearLayout li1,li2,li3,li4,li5 ;
                 li3.setBackground(getResources().getDrawable(R.drawable.cardbackround2));
                 li4.setBackground(getResources().getDrawable(R.drawable.cardbackround));
                 li5.setBackground(getResources().getDrawable(R.drawable.cardbackround2));
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.FrameFragment,new favoritefrag())
+                        .commit();
 
             }
         });

@@ -126,7 +126,19 @@
                 android:padding="8dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/gris" />
-
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/pourcentagedecodepromo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit_text_background"
+                android:drawablePadding="8dp"
+                android:hint="Pourcentage de Code promo"
+                android:inputType="number"
+                android:visibility="visible"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gris" />
 
 
             <androidx.appcompat.widget.AppCompatEditText

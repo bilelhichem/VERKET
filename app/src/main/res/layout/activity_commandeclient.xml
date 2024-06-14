@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".commandeclient"
+    android:padding="10dp"
+    >
+
+    <LinearLayout
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+       <androidx.cardview.widget.CardView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           app:cardCornerRadius="20dp"
+           >
+           <ImageView
+               android:id="@+id/coomandeimage"
+               android:layout_width="120dp"
+               android:layout_height="120dp"
+               android:scaleType="centerCrop"
+
+               android:src="@drawable/baseline_image_24"
+
+               >
+
+           </ImageView>
+       </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center"
+            >
+            <TextView
+                android:id="@+id/namecommande"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name de produit"
+                android:textStyle="bold"
+                >
+
+            </TextView>
+            <TextView
+                android:id="@+id/desccommande"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description  de produit"
+                android:textStyle="bold"
+                >
+
+            </TextView>
+        </LinearLayout>
+
+        <TextView
+            android:layout_gravity="bottom"
+            android:id="@+id/priccommande"
+            android:textColor="@color/verket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prix de produit"
+            android:textStyle="bold"
+            >
+
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Qte : "
+            >
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:id="@+id/moins"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            >
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/numberdequantitedecommande"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            >
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            >
+
+        </TextView>
+
+
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/codepromoclient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit_text_background"
+        android:drawablePadding="8dp"
+        android:hint="Code promo"
+        android:inputType="text"
+        android:visibility="visible"
+        android:padding="8dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gris" >
+
+    </androidx.appcompat.widget.AppCompatEditText>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Total"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            >
+
+        </TextView>
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price Total"
+            android:textStyle="bold"
+            android:id="@+id/pricetotal"
+            android:textColor="@color/verket"
+            android:textSize="20dp"
+            >
+
+        </TextView>
+
+
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/verket"
+        android:text="shop"
+        android:id="@+id/shop"
+        android:textColor="@color/white"
+
+        >
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+</LinearLayout>

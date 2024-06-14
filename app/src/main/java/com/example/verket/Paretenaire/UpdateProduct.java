@@ -44,7 +44,7 @@ import java.util.Map;
 
 public class UpdateProduct extends AppCompatActivity {
 
-    EditText name, description, prix, quantite, codepromo, pourcentage, dateprimier;
+    EditText name, description, prix, quantite, codepromo, pourcentage, dateprimier,pourcentagedecodepromo;
     ImageView uplimage;
     String item;
 
@@ -124,6 +124,7 @@ public class UpdateProduct extends AppCompatActivity {
         pourcentage = findViewById(R.id.uppourcentagepr);
         dateprimier = findViewById(R.id.updatepr);
         registervend = findViewById(R.id.confirmeupdate);
+        pourcentagedecodepromo = findViewById(R.id.pourcentagedecodepromo);
         imgref = FirebaseStorage.getInstance().getReference().child("ProduitPartenaire");
         String userid = FirebaseAuth.getInstance().getCurrentUser().getUid();
         datadb = FirebaseDatabase.getInstance(getString(R.string.db_url)).getReference().child("ProduitPartenaire").child(userid);
@@ -151,6 +152,7 @@ public class UpdateProduct extends AppCompatActivity {
                         codepromo.setText(dataSnapshot.child("codepromo").getValue().toString());
                         pourcentage.setText(dataSnapshot.child("pourcentage").getValue().toString());
                         dateprimier.setText(dataSnapshot.child("date_pirime").getValue().toString());
+                        pourcentagedecodepromo.setText(dataSnapshot.child("pourcentagedecodepromo").getValue().toString());
                         break;
                     }
                 }
@@ -200,6 +202,7 @@ public class UpdateProduct extends AppCompatActivity {
                                                         quantite.getText().toString(),
                                                         editTextCategory.getText().toString(),
                                                         codepromo.getText().toString(),
+                                                        pourcentagedecodepromo.getText().toString(),
                                                         pourcentage.getText().toString(),
                                                         dateprimier.getText().toString()
                                                 ));

@@ -9,12 +9,13 @@ public class ProduitModel {
     public String quantiteproduit;
     public String categorieproduit;
     public String codepromo;
+    public String pourcentagedecodepromo;
     public String pourcentage;
 
     public String date_pirime;
 
 
-    public ProduitModel(String id, String imageproduit, String nameproduit, String descriptionproduit, String prixproduit, String quantiteproduit, String categorieproduit, String codepromo, String pourcentage, String date_pirime) {
+    public ProduitModel(String id, String imageproduit, String nameproduit, String descriptionproduit, String prixproduit, String quantiteproduit, String categorieproduit, String codepromo, String pourcentagedecodepromo, String pourcentage, String date_pirime) {
         this.id = id;
         this.imageproduit = imageproduit;
         this.nameproduit = nameproduit;
@@ -23,6 +24,7 @@ public class ProduitModel {
         this.quantiteproduit = quantiteproduit;
         this.categorieproduit = categorieproduit;
         this.codepromo = codepromo;
+        this.pourcentagedecodepromo = pourcentagedecodepromo;
         this.pourcentage = pourcentage;
         this.date_pirime = date_pirime;
     }
@@ -92,6 +94,14 @@ public class ProduitModel {
 
     public void setCodepromo(String codepromo) {
         this.codepromo = codepromo;
+    }
+
+    public String getPourcentagedecodepromo() {
+        return pourcentagedecodepromo;
+    }
+
+    public void setPourcentagedecodepromo(String pourcentagedecodepromo) {
+        this.pourcentagedecodepromo = pourcentagedecodepromo;
     }
 
     public String getPourcentage() {
