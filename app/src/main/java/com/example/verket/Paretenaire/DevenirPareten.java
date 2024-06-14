@@ -22,9 +22,11 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.verket.R;
+import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -32,6 +34,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.util.List;
 import java.util.UUID;
 
 public class DevenirPareten extends AppCompatActivity {
@@ -39,9 +42,10 @@ public class DevenirPareten extends AppCompatActivity {
 
 Button  addpr ;
 ImageView uplimage , imagemarque , upcartnat ;
-EditText namepart ,prenpart , emailpart , telepart , marquepart , descmarque ;
+EditText namepart ,prenpart  , telepart , marquepart , descmarque ;
 
 DatabaseReference datadb ;
+FirebaseAuth mauth ;
 
 Uri ImageFIle , ImageFileCart , ImageFileMaruqe ;
 ProgressDialog loading;
@@ -158,7 +162,7 @@ StorageReference imgref ;
     public void init(){
         namepart = findViewById(R.id.namepart);
         prenpart = findViewById(R.id.prenparet);
-        emailpart = findViewById(R.id.emailpart);
+
         telepart = findViewById(R.id.telepart);
         marquepart = findViewById(R.id.marqpart);
         descmarque = findViewById(R.id.descrmarque);
@@ -166,8 +170,11 @@ StorageReference imgref ;
         upcartnat = findViewById(R.id.upcartnat);
         imagemarque = findViewById(R.id.imagemarque);
         addpr = findViewById(R.id.addpr);
+        mauth = FirebaseAuth.getInstance();
         imgref = FirebaseStorage.getInstance().getReference().child("Partenaire");
-        datadb = FirebaseDatabase.getInstance(getString(R.string.db_url)).getReference().child("partenaire");
+        String y = mauth.getCurrentUser().getUid();
+
+        datadb = FirebaseDatabase.getInstance(getString(R.string.db_url)).getReference().child("partenaire").child(y);
 
     }
 
@@ -178,91 +185,59 @@ StorageReference imgref ;
         return uuid.toString();
     }
 
-    public  void saveproductindb(){
+    public void saveproductindb() {
+        String basePath = "Partenaire_" + namepart.getText().toString();
+        StorageReference profileImageRef = imgref.child(basePath + "_imageprofil");
+        StorageReference brandImageRef = imgref.child(basePath + "_imagemaruqe");
+        StorageReference cartImageRef = imgref.child(basePath + "_imagecart");
 
-        imgref.child("Partenaire_"+namepart.getText().toString()+"imageprofil")
-                .putFile(ImageFIle)
-                .addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+        Task<Uri> profileImageTask = uploadImage(profileImageRef, ImageFIle);
+        Task<Uri> brandImageTask = uploadImage(brandImageRef, ImageFileMaruqe);
+        Task<Uri> cartImageTask = uploadImage(cartImageRef, ImageFileCart);
+
+        Tasks.whenAllSuccess(profileImageTask, brandImageTask, cartImageTask)
+                .addOnSuccessListener(new OnSuccessListener<List<Object>>() {
                     @Override
-                    public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                        if (task.isSuccessful()){
+                    public void onSuccess(List<Object> results) {
+                        String imageProfileUrl = ((Uri) results.get(0)).toString();
+                        String imageBrandUrl = ((Uri) results.get(1)).toString();
+                        String imageCartUrl = ((Uri) results.get(2)).toString();
+                        String id = generateRandomID();
 
-                            imgref.child("Partenaire_"+namepart.getText().toString()+"imageprofil")
-                                    .getDownloadUrl()
-                                    .addOnSuccessListener(new OnSuccessListener<Uri>() {
-                                        @Override
-                                        public void onSuccess(Uri uri) {
-                                             imagephotopartenaire = uri.toString();
-
-                                            imgref.child("Partenaire_"+namepart.getText().toString()+"imagemaruqe")
-                                                    .putFile(ImageFileMaruqe)
-                                                    .addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
-                                                        @Override
-                                                        public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                                                            if (task.isSuccessful()){
-
-                                                                imgref.child("Partenaire_"+namepart.getText().toString()+"imagemaruqe")
-                                                                        .getDownloadUrl()
-                                                                        .addOnSuccessListener(new OnSuccessListener<Uri>() {
-                                                                            @Override
-                                                                            public void onSuccess(Uri uri) {
-                                                                                imagemarquepartrnaire = uri.toString();
-                                                                                imgref.child("Partenaire_"+namepart.getText().toString()+"imagecart")
-                                                                                        .putFile(ImageFileCart)
-                                                                                        .addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
-                                                                                            @Override
-                                                                                            public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                                                                                                if (task.isSuccessful()){
-
-                                                                                                    imgref.child("Partenaire_"+namepart.getText().toString()+"imagecart")
-                                                                                                            .getDownloadUrl()
-                                                                                                            .addOnSuccessListener(new OnSuccessListener<Uri>() {
-                                                                                                                @Override
-                                                                                                                public void onSuccess(Uri uri) {
-                                                                                                                    imagecartnational = uri.toString();
-                                                                                                                    String id = generateRandomID();
-
-
-                                                                                                                    save(new partenaire(
-                                                                                                                      namepart.getText().toString(),
-                                                                                                                      prenpart.getText().toString(),
-                                                                                                                      emailpart.getText().toString(),
-                                                                                                                      telepart.getText().toString(),
-                                                                                                                      marquepart.getText().toString(),
-                                                                                                                      descmarque.getText().toString(),
-                                                                                                                      imagephotopartenaire,
-                                                                                                                      imagecartnational,
-                                                                                                                      imagemarquepartrnaire,
-                                                                                                                      "0",
-                                                                                                                            id
-                                                                                                                    ));
-                                                                                                                }
-                                                                                                            });
-                                                                                                }
-
-                                                                                            }
-                                                                                        });
-
-                                                                            }
-                                                                        });
-                                                            }
-
-                                                        }
-                                                    });
-
-                                        }
-                                    });
-                        }
-
+                        save(new partenaire(
+                                namepart.getText().toString(),
+                                prenpart.getText().toString(),
+                                telepart.getText().toString(),
+                                marquepart.getText().toString(),
+                                descmarque.getText().toString(),
+                                imageProfileUrl,
+                                imageCartUrl,
+                                imageBrandUrl,
+                                "0",
+                                id
+                        ));
                     }
                 });
+    }
 
+    private Task<Uri> uploadImage(StorageReference ref, Uri file) {
+        return ref.putFile(file)
+                .continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                    @Override
+                    public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                        if (!task.isSuccessful()) {
+                            throw task.getException();
+                        }
+                        return ref.getDownloadUrl();
+                    }
+                });
     }
 
 
+
     public void save ( partenaire product){
-        DatabaseReference productRef = datadb.push();
-        productRef.setValue(product)
+
+        datadb.setValue(product)
                 .addOnSuccessListener(aVoid -> {
                     loading.dismiss();
                     Toast.makeText(DevenirPareten.this, "Succes", Toast.LENGTH_SHORT).show();
@@ -270,7 +245,7 @@ StorageReference imgref ;
                 .addOnFailureListener(e -> {
                     // Handle failure
                     loading.dismiss();
-                    Toast.makeText(DevenirPareten.this, "FAILED", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DevenirPareten.this, e.getMessage().toString(), Toast.LENGTH_SHORT).show();
                 });
 
 

@@ -3,7 +3,6 @@ package com.example.verket.Model;
 public class partenaire {
     public String namepart;
     public String prenpart;
-    public String emailpart;
     public String telepart;
     public String marquepart;
     public String descmarque;
@@ -15,10 +14,9 @@ public class partenaire {
 
     public String id ;
 
-    public partenaire(String namepart, String prenpart, String emailpart, String telepart, String marquepart, String descmarque, String uplimage, String upcartnat, String imagemarque, String situation,String id) {
+    public partenaire(String namepart, String prenpart, String telepart, String marquepart, String descmarque, String uplimage, String upcartnat, String imagemarque, String situation,String id) {
         this.namepart = namepart;
         this.prenpart = prenpart;
-        this.emailpart = emailpart;
         this.telepart = telepart;
         this.marquepart = marquepart;
         this.descmarque = descmarque;
@@ -51,13 +49,7 @@ public class partenaire {
         this.prenpart = prenpart;
     }
 
-    public String getEmailpart() {
-        return emailpart;
-    }
 
-    public void setEmailpart(String emailpart) {
-        this.emailpart = emailpart;
-    }
 
     public String getTelepart() {
         return telepart;

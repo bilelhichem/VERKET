@@ -15,10 +15,10 @@
         >
 
         <ImageView
-            android:id="@+id/primage"
+            android:id="@+id/primagee"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="fitCenter"
+            android:scaleType="centerCrop"
             android:src="@drawable/brandimage"
             >
 
@@ -35,7 +35,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
         android:textColor="#919398"
-        android:id="@+id/pr1"
+        android:id="@+id/pr11"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
     <TextView
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
-        android:id="@+id/pr2"
+        android:id="@+id/pr22"
         android:textColor="#E91C1C"
 
         android:layout_width="wrap_content"

@@ -2,6 +2,7 @@ package com.example.verket.adapter;
 
 import android.content.ClipData;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.verket.HomeCategorie;
 import com.example.verket.Model.CardModel;
 import com.example.verket.R;
 import com.example.verket.viewhorder.CardCategorie;
@@ -44,6 +46,17 @@ public class CardCtegorieAdapter extends RecyclerView.Adapter<CardCategorie> {
         holder.text.setText(item.getTitle());
         holder.image.setImageResource(item.getImageResource());
         String text = holder.text.getText().toString();
+
+          holder.image.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View view) {
+                  Intent intent = new Intent(context , HomeCategorie.class);
+                  intent.putExtra("item",text);
+                  context.startActivity(intent);
+
+
+              }
+          });
 
         if (text.equals("BIO")) {
             holder.bil.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.verket))); // Change to your desired color

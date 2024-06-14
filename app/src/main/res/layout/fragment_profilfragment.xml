@@ -429,11 +429,12 @@ android:backgroundTint="@color/white"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 >
+
                 <ImageView
-                    android:layout_width="20dp"
+                    android:id="@+id/yad"
+                    android:layout_width="13dp"
                     android:layout_height="20dp"
-                    android:src="@drawable/partenaire"
-                    >
+                    android:src="@drawable/partenaire">
 
                 </ImageView>
 
@@ -468,7 +469,7 @@ android:backgroundTint="@color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Déconnecter"
-
+                    android:id="@+id/logout"
                     android:layout_marginLeft="10dp"
                     android:textColor="#DA0C0C"
                     android:fontFamily="@font/inter"

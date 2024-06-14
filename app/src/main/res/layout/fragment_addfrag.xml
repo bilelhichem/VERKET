@@ -74,7 +74,7 @@
                 android:background="@drawable/edit_text_background"
                 android:drawablePadding="8dp"
                 android:hint="Prix"
-                android:inputType="text"
+                android:inputType="number"
                 android:padding="8dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/gris" />
@@ -87,7 +87,7 @@
                 android:background="@drawable/edit_text_background"
                 android:drawablePadding="8dp"
                 android:hint="Quantité de stock disponible"
-                android:inputType="text"
+                android:inputType="number"
                 android:padding="8dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/gris" />
@@ -152,9 +152,10 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/edit_text_background"
                 android:drawablePadding="8dp"
+
                 android:hint="Pourcentage"
                 android:visibility="gone"
-                android:inputType="text"
+                android:inputType="numberDecimal"
                 android:padding="8dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/gris" />
@@ -167,7 +168,7 @@
                 android:background="@drawable/edit_text_background"
                 android:drawablePadding="8dp"
                 android:hint="date périmés"
-                android:inputType="text"
+                android:inputType="date"
                 android:padding="8dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/gris" />

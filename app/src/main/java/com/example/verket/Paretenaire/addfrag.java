@@ -122,7 +122,24 @@ public class addfrag extends Fragment {
         registervend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                saveproductindb();
+
+                if (!pourcentage.getText().toString().isEmpty()) {
+                    int pourcentageValue = Integer.valueOf(pourcentage.getText().toString());
+                    if (pourcentageValue > 100 || pourcentageValue < 0) {
+                        pourcentage.setError("Veuillez entrer un nombre inférieur à 100 et supérieur à 0");
+                    }
+                } else  if (name.getText().toString().isEmpty()){
+                    name.setError("Veuillez entrer name pour produit");
+                } else  if (description.getText().toString().isEmpty()){
+                    description.setError("Veuillez entrer un description pour le produit");
+                } else  if (quantite.getText().toString().isEmpty()){
+                    quantite.setError("Veuillez entrer un quantite pour le produit");
+                }else  if (dateprimier.getText().toString().isEmpty()){
+                    dateprimier.setError("Veuillez entrer un date expiration pour le produit");
+                }else{
+                    saveproductindb();
+                }
+
             }
         });
 
@@ -136,7 +153,7 @@ public class addfrag extends Fragment {
 
 
     private void showCategoryOptions() {
-        String[] categories = {"Bio", "COSMETIC", "DETERGENT","ARTISANAT"};
+        String[] categories = {"BIO", "COSMETIC", "DETERGENT","ARTISANAT"};
         ListPopupWindow listPopupWindow = new ListPopupWindow(getContext());
         listPopupWindow.setAnchorView(textInputLayout);
         listPopupWindow.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, categories));

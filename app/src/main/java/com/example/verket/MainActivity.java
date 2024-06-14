@@ -7,7 +7,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
 
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.appcheck.FirebaseAppCheck;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 FirebaseAuth mauth ;
@@ -15,6 +18,10 @@ FirebaseAuth mauth ;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        FirebaseApp.initializeApp(this);
+        FirebaseAppCheck firebaseAppCheck = FirebaseAppCheck.getInstance();
+
+          FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }

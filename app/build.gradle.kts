@@ -34,14 +34,17 @@ android {
 
 dependencies {
 
+
+
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
     implementation ("com.squareup.picasso:picasso:2.71828")
     implementation("com.google.firebase:firebase-auth")
-    implementation ("com.github.bumptech.glide:glide:4.16.0")
     implementation("com.google.firebase:firebase-database")
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-storage")
     implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
     implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation ("com.google.firebase:firebase-appcheck:16.0.0")
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     testImplementation("junit:junit:4.13.2")
