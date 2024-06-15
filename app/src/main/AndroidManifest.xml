@@ -18,6 +18,9 @@
         android:theme="@style/Theme.VERKET"
         tools:targetApi="31">
         <activity
+            android:name=".panier"
+            android:exported="false" />
+        <activity
             android:name=".commandeclient"
             android:exported="false" />
         <activity

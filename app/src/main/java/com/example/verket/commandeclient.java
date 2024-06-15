@@ -46,7 +46,7 @@ public class commandeclient extends AppCompatActivity {
     DatabaseReference datadb , db;
     EditText codepromoclient ;
     StorageReference imgref ;
-    String qnt , codepromo,poucentagedecodepromo , ImageFile,numerodetele;
+    String qnt , codepromo,poucentagedecodepromo , ImageFile,numerodetele , name , desc;
     Integer pric  ;
     Integer nvprice = 0;
     Button shop ;
@@ -193,6 +193,8 @@ public class commandeclient extends AppCompatActivity {
                             qnt = da.child("quantiteproduit").getValue().toString();
                             Picasso.get().load(da.child("imageproduit").getValue().toString()).into(coomandeimage);
                             namecommande.setText(da.child("nameproduit").getValue().toString());
+                            name = da.child("nameproduit").getValue().toString();
+                            desc = da.child("descriptionproduit").getValue().toString();
                             desccommande.setText(da.child( "descriptionproduit").getValue().toString());
 
                             ImageFile = da.child("imageproduit").getValue().toString();
@@ -275,7 +277,9 @@ public class commandeclient extends AppCompatActivity {
                                 numerodetele,
                                ImageFile, // Use the download URL
                              String.valueOf(comteur),
-                              String.valueOf(nvprice)
+                              String.valueOf(nvprice),
+                                name,
+                                desc
                         )
                 );
             }

@@ -7,13 +7,17 @@ public class commande {
     String quantite ;
     String pricetotal ;
 
-    public commande(String email, String numerodetele, String imagedeprod, String quantite, String pricetotal) {
+    String namedecommadne ;
+    String descrdecommande ;
 
+    public commande(String email, String numerodetele, String imagedeprod, String quantite, String pricetotal, String namedecommadne, String descrdecommande) {
         this.email = email;
         this.numerodetele = numerodetele;
         this.imagedeprod = imagedeprod;
         this.quantite = quantite;
         this.pricetotal = pricetotal;
+        this.namedecommadne = namedecommadne;
+        this.descrdecommande = descrdecommande;
     }
 
     public commande() {
@@ -57,5 +61,21 @@ public class commande {
 
     public void setPricetotal(String pricetotal) {
         this.pricetotal = pricetotal;
+    }
+
+    public String getNamedecommadne() {
+        return namedecommadne;
+    }
+
+    public void setNamedecommadne(String namedecommadne) {
+        this.namedecommadne = namedecommadne;
+    }
+
+    public String getDescrdecommande() {
+        return descrdecommande;
+    }
+
+    public void setDescrdecommande(String descrdecommande) {
+        this.descrdecommande = descrdecommande;
     }
 }
